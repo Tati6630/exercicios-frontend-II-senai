@@ -1,18 +1,18 @@
 import { useState } from "react"
 
-const CambioDolar = () => {
+const CambioEuro = () => {
     const [real, setReal] = useState(" ");
-    const [dolar, setDolar] = useState(" ");
-    const taxaDolar = 5.00;
+    const [euro, setEuro] = useState(" ");
+    const taxaEuro = 5.50;
 
-    const converteParaDolar = (e) => {
-       setDolar(e.target.value);
-       setReal(e.target.value / taxaDolar);
+    const converteParaEuro = (e) => {
+        setEuro(e.target.value);
+        setReal(e.target.value / taxaEuro);
     };
 
     const converteParaReal = (e) => {
         setReal(e.target.value);
-        setDolar(e.target.value * taxaDolar);
+        setEuro(e.target.value * taxaEuro);
     };
 
     return (
@@ -28,17 +28,14 @@ const CambioDolar = () => {
 
             <input
                 type="number"
-                value={dolar}
-                onChange={converteParaDolar}
+                value={euro}
+                onChange={converteParaEuro}
                 style={{ margin: '5px' }}
             />
 
-            <strong> dólares </strong>
+            <strong> euros </strong>
 
         </>
     );
 };
-export default CambioDolar; 
-
-
-
+export default CambioEuro;
